@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D27BFEE1-6BE0-4598-BBEB-5DD9DDAC0F31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Loja.Application</RootNamespace>
+    <AssemblyName>Loja.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Client, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Client.4.2.0\lib\net45\NuGet.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Common, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Common.4.2.0\lib\net45\NuGet.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.ContentModel, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.ContentModel.4.2.0\lib\net45\NuGet.ContentModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Frameworks, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Frameworks.4.2.0\lib\net45\NuGet.Frameworks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Packaging, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Packaging.4.2.0\lib\net45\NuGet.Packaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Packaging.Core, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Packaging.Core.4.2.0\lib\net45\NuGet.Packaging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Packaging.Core.Types, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Packaging.Core.Types.4.2.0\lib\net45\NuGet.Packaging.Core.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Repositories, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Repositories.4.2.0\lib\net45\NuGet.Repositories.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.RuntimeModel, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.RuntimeModel.4.2.0\lib\net45\NuGet.RuntimeModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Versioning, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Versioning.4.2.0\lib\net45\NuGet.Versioning.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppServiceBase.cs" />
+    <Compile Include="ClienteContatoAppService.cs" />
+    <Compile Include="ClienteAppService.cs" />
+    <Compile Include="ProdutoClienteSaidaItemAppService.cs" />
+    <Compile Include="EmailAppService.cs" />
+    <Compile Include="EmpresaClienteAppService.cs" />
+    <Compile Include="EmpresaContatoAppService.cs" />
+    <Compile Include="EmpresaFornecedorAppService.cs" />
+    <Compile Include="EmpresaAppService.cs" />
+    <Compile Include="FornecedorContatoAppService.cs" />
+    <Compile Include="FornecedorAppService.cs" />
+    <Compile Include="Interfaces\IProdutoClienteSaidaItemAppService.cs" />
+    <Compile Include="Interfaces\IEmailAppService.cs" />
+    <Compile Include="Interfaces\IAppServiceBase.cs" />
+    <Compile Include="Interfaces\IClienteContatoAppService.cs" />
+    <Compile Include="Interfaces\IClienteAppService.cs" />
+    <Compile Include="Interfaces\IEmpresaClienteAppService.cs" />
+    <Compile Include="Interfaces\IEmpresaContatoAppService.cs" />
+    <Compile Include="Interfaces\IEmpresaFornecedorAppService.cs" />
+    <Compile Include="Interfaces\IEmpresaAppService.cs" />
+    <Compile Include="Interfaces\IFornecedorContatoAppService.cs" />
+    <Compile Include="Interfaces\IFornecedorAppService.cs" />
+    <Compile Include="Interfaces\IMenuAppService.cs" />
+    <Compile Include="Interfaces\IMenuTipoAppService.cs" />
+    <Compile Include="Interfaces\IProdutoClienteSaidaAppService.cs" />
+    <Compile Include="Interfaces\IProdutoEstoqueAppService.cs" />
+    <Compile Include="Interfaces\IProdutoFormasDePagamentoAppService.cs" />
+    <Compile Include="Interfaces\IProdutoFornecedorEntradaAppService.cs" />
+    <Compile Include="Interfaces\IProdutoAppService.cs" />
+    <Compile Include="Interfaces\IProdutoTipoAppService.cs" />
+    <Compile Include="Interfaces\IServicoAppService.cs" />
+    <Compile Include="Interfaces\IServicoUsuarioPerfilAppService.cs" />
+    <Compile Include="Interfaces\IUsuarioPerfilMenuAppService.cs" />
+    <Compile Include="Interfaces\IUsuarioPerfilAppService.cs" />
+    <Compile Include="Interfaces\IUsuarioAppService.cs" />
+    <Compile Include="MenuAppService.cs" />
+    <Compile Include="MenuTipoAppService.cs" />
+    <Compile Include="ProdutoClienteSaidaAppService.cs" />
+    <Compile Include="ProdutoEstoqueAppService.cs" />
+    <Compile Include="ProdutoFormasDePagamentoAppService.cs" />
+    <Compile Include="ProdutoFornecedorEntradaAppService.cs" />
+    <Compile Include="ProdutoAppService.cs" />
+    <Compile Include="ProdutoTipoAppService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicoAppService.cs" />
+    <Compile Include="ServicoUsuarioPerfilAppService.cs" />
+    <Compile Include="UsuarioPerfilMenuAppService.cs" />
+    <Compile Include="UsuarioPerfilAppService.cs" />
+    <Compile Include="UsuarioAppService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Loja.Common\Loja.Common.csproj">
+      <Project>{d8a13d9d-99d8-4c41-a5a7-ac4b1c7a54ac}</Project>
+      <Name>Loja.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Loja.Domain\Loja.Domain.csproj">
+      <Project>{1d86c98e-fb69-48a4-a8a0-c318552da133}</Project>
+      <Name>Loja.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

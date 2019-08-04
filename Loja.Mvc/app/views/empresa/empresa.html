@@ -1,0 +1,100 @@
+﻿<div class="container" data-ng-controller="empresaController">
+    <h2 class="sub-header">{{cabecalho}} Empresa</h2>
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+
+    <a class="btn btn-success" data-ng-href="#!/empresa">Lista de Empresa</a>
+    <br />
+    <br />
+
+    <form name="userForm" novalidate class="form-inline" role="form">
+        <div class="row show-grid">
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="nomeEmpresa" data-ng-model="empresa.nomeEmpresa" required placeholder="Nome" />
+                <p class="help-block" ng-if="userForm.name.$error.required">O nome da empresa é obrigatório</p>
+            </div>
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="nomeFantasia" data-ng-model="empresa.nomeFantasia" required placeholder="Nome Fantasia" />
+                <p class="help-block" data-ng-if="userForm.name.$error.required">O nome fantasia  é obrigatório</p>
+            </div>
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="contato" data-ng-model="empresa.contato" placeholder="Contato" />
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="inscricaoEstadual" data-ng-model="empresa.inscricaoEstadual" placeholder="inscricaoEstadual" />
+            </div>
+
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="cnpj" data-ng-model="empresa.cnpj" placeholder="Cnpj" />
+            </div>
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="endereco" data-ng-model="empresa.endereco" placeholder="endereco" />
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="numero" data-ng-model="empresa.numero" placeholder="Numero" />
+            </div>
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="estado" data-ng-model="empresa.estado" placeholder="Estado" />
+            </div>
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="cidade" data-ng-model="empresa.cidade" placeholder="Cidade" />
+            </div>
+        </div>
+        <div class="row show-grid">
+            <upload-imagem info="empresa.empresaImagem"></upload-imagem>
+        </div>
+    </form>
+    <form name="userFormContato" novalidate class="form-inline" role="form">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Empresa Contato</h2>
+            </div>
+        </div>
+        <div class="row show-grid" show-errors>
+            <div class="col-md-6">
+
+                <input type="email" class="form-control" name="email" ng-model="email" required placeholder="E-mail" />
+
+                <input type="text" class="form-control" name="telefone" data-ng-model="telefone" placeholder="Telefone" />
+
+                <button class="btn btn-primary" data-ng-click="AdicionarContato()">Adicionar Contato</button>
+
+                <p data-ng-show="userFormContato.email.$error.email" class="help-block">Informe um e-mail válido.</p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+
+                        <tr data-ng-repeat="contato in empresa.empresaContatos">
+                            <td data-title="'Email'">{{contato.email}}
+                            </td>
+                            <td data-title="'Telefone'">{{contato.telefone}}
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-default" data-ng-click="deleteContato(contato)">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>
+                                </button>
+                            </td>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-6">
+                <button class="btn btn-primary" data-ng-click="salvar()">{{btn}}</button>
+            </div>
+        </div>
+    </form>
+</div>

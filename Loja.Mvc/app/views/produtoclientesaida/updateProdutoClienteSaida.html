@@ -1,0 +1,90 @@
+﻿<h2 class="sub-header">Consulta Pedido</h2>
+
+<div class="container" data-ng-controller="updateprodutoClienteSaidaController">
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+
+    <a class="btn btn-success" data-ng-href="#!/produtoclientesaida">Lista de Pedido</a>
+    <br/>
+    <br/>
+    <form name="userForm" novalidate class="form-inline" role="form">
+        <div class="row show-grid">
+            <div class="col-md-6">
+                <div style="height: 57px;">
+                    <label class="">Cliente</label>
+                    <input ng-disabled="true" id="txtcliente" class="form-control"  placeholder="Cliente" ng-model="produtoClienteSaida.cliente.nomeCliente" />
+                </div>
+            </div>
+            <div class="col-md-6">
+
+                <div style="height: 38px;">
+                    <img style="width: 13%;" class="img-responsive"
+                        data-ng-model="produtoClienteSaidas.cliente.imagemCliente"
+                        data-ng-src="data:image/jpeg;base64,{{produtoClienteSaida.cliente.imagemCliente}}" />
+                </div>
+                <div>
+                    <div>
+                        CNPJ:  {{produtoClienteSaida.cliente.cpfCnpj}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <label class="">Numero Pedido</label>
+                <input ng-disabled="true" id="Text2" class="form-control"  placeholder="Cliente" ng-model="produtoClienteSaida.produtoClienteSaidaId" />
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+
+    </form>
+
+    <h2>Produtos</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Produto
+                    </th>
+                    <th>Quantidadade
+                    </th>
+                    <th>Valor Unitario
+                    </th>
+                    <th>Total
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="produtoClienteSaida in produtoClienteSaida.produtoClienteSaidaItems">
+
+                    <td>
+                        <img style="width: 12%;" data-ng-src="data:image/jpeg;base64,{{produtoClienteSaida.produto.imagemCliente}}" alt="" />
+                        {{produtoClienteSaida.produto.nomeProduto}}
+                    </td>
+                    <td class="text-center">{{produtoClienteSaida.quantidadeSaida}}</td>
+                    <td class="text-center">{{produtoClienteSaida.valorUnitario}}</td>
+                    <td class="text-center"><span>{{ produtoClienteSaida.subTotal}}</span></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="text-right" colspan="4">Total:{{produtoClienteSaida.valorTotal}}
+                    </td>
+                </tr>
+
+            </tfoot>
+        </table>
+    </div>
+    <form name="userFormPagamento" novalidate class="form-inline" role="form">
+        <div class="row show-grid">
+            <div class="col-md-12">
+                <label>Formas de Pagamento</label>
+                <input ng-disabled="true" id="Text1" class="form-control"  placeholder="Cliente" ng-model="produtoClienteSaida.produtoFormasDePagamento.nomeFormaPagamento" />
+            </div>
+        </div>
+    </form>
+</div>

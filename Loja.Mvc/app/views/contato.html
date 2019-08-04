@@ -1,0 +1,42 @@
+﻿<div class="container" data-ng-controller="contatoController">
+
+    <h2 class="sub-header">Contato Sonic TI</h2>
+    <div class="row show-grid">
+        <div class="col-md-12">
+            <b>Email: </b>rogerfbatista@gmail.com : sonic_msn2007@hotmail.com
+        </div>
+        <div class="col-md-12">
+            <b>Telefones: </b>55(11)3917-2708 : 55(11)943817260
+
+        </div>
+    </div>
+
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+
+    <form name="userForm" novalidate class="form-inline" role="form">
+        <div class="row show-grid" >
+            <div class="col-md-12" show-errors>
+                <label>Assunto</label>
+                <div>
+                    <input type="text" name="assunto" data-ng-model="email.assunto"  class="form-control" required />
+                   <p class="help-block" ng-if="userForm.name.$error.required">Assunto  é obrigatório</p>
+                </div>
+            </div>
+            <div class="col-md-12" show-errors>
+                <label>Mensagem</label>
+                <div>
+                    <textarea class="form-control" name="mensagem" data-ng-model="email.mensagem"  rows="5" required placeholder="Mensagem"></textarea>
+               <p class="help-block" ng-if="userForm.name.$error.required">Mensagem é é obrigatório</p>
+                </div>
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-12">
+                <button class="btn btn-primary" data-ng-click="enviar()">Enviar</button>
+            </div>
+        </div>
+</form>
+   
+</div>

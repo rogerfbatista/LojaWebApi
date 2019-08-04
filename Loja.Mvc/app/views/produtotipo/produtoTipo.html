@@ -1,0 +1,26 @@
+﻿<div class="container" data-ng-controller="produtoTipoController">
+    <h2 class="sub-header">{{cabecalho}} Tipo de Produto</h2>
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+
+    <a class="btn btn-success" data-ng-href="#!/produtotipo">Lista Tipo de Produto</a>
+    <br />
+    <br />
+    <form name="userForm" novalidate class="form-inline" role="form">
+        <div class="row show-grid">
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="nomeProdutoTipo" data-ng-model="produtoTipo.nomeProdutoTipo" required placeholder="Nome" />
+                <p class="help-block" ng-if="userForm.nomeProdutoTipo.$error.required">O nome do Tipo de Produto é obrigatório</p>
+            </div>
+
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-6">
+                <button class="btn btn-primary" data-ng-click="salvar()">{{btn}}</button>
+            </div>
+        </div>
+    </form>
+
+</div>

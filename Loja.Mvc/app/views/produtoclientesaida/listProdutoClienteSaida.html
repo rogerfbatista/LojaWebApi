@@ -1,0 +1,15 @@
+﻿<h2 class="sub-header">Lista de Pedidos Cliente</h2>
+
+<div data-ng-controller="listprodutoClienteSaidaController">
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+
+    <a class="btn btn-primary" data-ng-href="#!/produtoclientesaida/new">Pedido</a>
+    <br />
+    <br />
+    
+        <table-directive grid="gridDirective"></table-directive>
+
+
+</div>

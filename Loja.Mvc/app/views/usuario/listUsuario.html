@@ -1,0 +1,38 @@
+﻿<h2 class="sub-header">Lista de Usuario</h2>
+
+<div data-ng-controller="usuarioController">
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+
+    <a class="btn btn-primary" data-ng-href="#!/usuario/new">Novo Usuario</a>
+    <br />
+    <br />
+      <table-directive grid="gridDirective" ></table-directive>
+
+   <!-- <span class="glyphicon glyphicon-filter"></span>
+    <input type="text" data-ng-model="filter.$" class="text-info" />
+    <br />
+
+    <div class="table-responsive">
+        <table data-ng-table="tableParams" class="table table-bordered table-striped">
+
+
+            <tr data-ng-repeat="usuario in $data ">
+                <td data-title="'Nome'">{{usuario.nomeUsuario}}</td>
+                <td data-title="'Email'">{{usuario.email}}</td>
+                <td class="text-center" data-title="'Logo'">
+                    <img style="width: 10%;" data-ng-src="data:image/jpeg;base64,{{usuario.imagemUsuario}}" alt="" />
+                </td>
+                <td class="text-center" style="width:10px;"  data-title="'Açoes'">
+                    <button type="button" class="btn btn-default" data-ng-click="remove(usuario, $index)">
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" data-ng-click="moveUpdate(usuario.usuarioId)">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>-->
+</div>

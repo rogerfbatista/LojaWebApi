@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC87C9D9-08D4-4FDD-8331-77A47A83FC35}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Loja.DataUpdate</RootNamespace>
+    <AssemblyName>Loja.DataUpdate</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\ClienteContato.cs" />
+    <Compile Include="Models\Empresa.cs" />
+    <Compile Include="Models\EmpresaCliente.cs" />
+    <Compile Include="Models\EmpresaContato.cs" />
+    <Compile Include="Models\EmpresaFornecedor.cs" />
+    <Compile Include="Models\Fornecedor.cs" />
+    <Compile Include="Models\FornecedorContato.cs" />
+    <Compile Include="Models\LojaContext.cs" />
+    <Compile Include="Models\Mapping\ClienteContatoMap.cs" />
+    <Compile Include="Models\Mapping\ClienteMap.cs" />
+    <Compile Include="Models\Mapping\EmpresaClienteMap.cs" />
+    <Compile Include="Models\Mapping\EmpresaContatoMap.cs" />
+    <Compile Include="Models\Mapping\EmpresaFornecedorMap.cs" />
+    <Compile Include="Models\Mapping\EmpresaMap.cs" />
+    <Compile Include="Models\Mapping\FornecedorContatoMap.cs" />
+    <Compile Include="Models\Mapping\FornecedorMap.cs" />
+    <Compile Include="Models\Mapping\MenuMap.cs" />
+    <Compile Include="Models\Mapping\MenuTipoMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoClienteSaidaItemMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoClienteSaidaMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoEstoqueMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoFormasDePagamentoMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoFornecedorEntradaMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoTipoMap.cs" />
+    <Compile Include="Models\Mapping\ServicoMap.cs" />
+    <Compile Include="Models\Mapping\ServicoUsuarioPerfilMap.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\Mapping\UsuarioMap.cs" />
+    <Compile Include="Models\Mapping\UsuarioPerfilMap.cs" />
+    <Compile Include="Models\Mapping\UsuarioPerfilMenuMap.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\MenuTipo.cs" />
+    <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\ProdutoClienteSaida.cs" />
+    <Compile Include="Models\ProdutoClienteSaidaItem.cs" />
+    <Compile Include="Models\ProdutoEstoque.cs" />
+    <Compile Include="Models\ProdutoFormasDePagamento.cs" />
+    <Compile Include="Models\ProdutoFornecedorEntrada.cs" />
+    <Compile Include="Models\ProdutoTipo.cs" />
+    <Compile Include="Models\Servico.cs" />
+    <Compile Include="Models\ServicoUsuarioPerfil.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\UsuarioPerfil.cs" />
+    <Compile Include="Models\UsuarioPerfilMenu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

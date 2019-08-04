@@ -1,0 +1,133 @@
+﻿
+<h2 class="sub-header">Alterar Entrada de Produtos</h2>
+
+<div class="container" data-ng-controller="updateprodutoFornecedorEntradaController">
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+
+    
+     <a class="btn btn-success" data-ng-href="#!/produtofornecedorentrada">Lista Entrada de Produtos</a>
+    <br/>
+    <br/>
+    <form name="userForm" novalidate class="form-inline" role="form">
+        <div class="row show-grid">
+            <div class="col-md-6" show-errors>
+                <label class="">Fornecedor</label>
+                <div mass-autocomplete>
+                    <input id="txtfornecedor" class="form-control" style="width: 400px" placeholder="Fornecedor" ng-model="dirty.value"
+                        mass-autocomplete-item="optionFornecedor">
+
+                    <input type="hidden" class="disabled" name="fornecedorId" ng-model="produtoFornecedorEntrada.fornecedorId" required />
+                    </div>
+            </div>
+            <div class="col-md-6" show-errors>
+                <label class="">Nº Nota Fiscal</label>
+                <div>
+                    <input class="form-control" ng-disabled="true" name="notaFiscalId"  ng-model="produtoFornecedorEntrada.notaFiscalId" placeholder="Nota Fiscal" required />
+                </div>
+
+            </div>
+        </div>
+        <div class="row show-grid" >
+            <div class="col-md-6" show-errors ng-class="{'has-error': datepickerForm.date.$invalid}">
+                <label class="control-label">Emissão</label>
+                <div>
+                    <input type="text" class="form-control" name="dataEmissao" ng-model="produtoFornecedorEntrada.dataEmissao" name="date" data-date-format="dd/MM/yyyy" data-max-date="{{produtoFornecedorEntrada.dataVencimento}}"   placeholder="Emissão" bs-datepicker required>
+                </div>
+            </div>
+            <div class="col-md-6" show-errors ng-class="{'has-error': datepickerForm.date.$invalid}">
+                <label class="">Vencimento</label>
+                <div>
+                    <input type="text" class="form-control" name="dataVencimento" ng-model="produtoFornecedorEntrada.dataVencimento" name="date" data-date-format="dd/MM/yyyy" data-min-date="{{produtoFornecedorEntrada.dataEmissao}}"  placeholder="Vencimento" bs-datepicker required>
+
+                </div>
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-12" show-errors>
+
+                <label class="">Produto</label>
+                <div mass-autocomplete>
+                    <input id="txtProduto" class="form-control" style="width: 400px" placeholder="Produto" ng-model="dirty1.value"
+                        mass-autocomplete-item="optionProduto">
+                    <input type="hidden" class="disabled" name="produtoId" ng-model="produtoFornecedorEntrada.produtoId" required />
+                </div>
+            </div>
+
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-6" show-errors>
+                <label class="">Quantidade</label>
+                <div>
+                    <input type="number" name="quantidadeEntrada" ng-model="produtoFornecedorEntrada.quantidadeEntrada" class="form-control" placeholder="Quantidade Produto" valid-number required />
+                </div>
+            </div>
+            <div class="col-md-6" show-errors>
+                <label class="">Valor Unitario</label>
+                <div>
+                    <input type="number" name="valorUnitario" ng-model="produtoFornecedorEntrada.valorUnitario" class="form-control" placeholder="Valor Unitario" *step="0.01"* inputprice required />
+                </div>
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-6">
+                <button class="btn btn-primary" data-ng-click="adicionar()">Adicionar</button>
+            </div>
+        </div>
+    </form>
+    <h2>Produtos</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Fornecedor
+                    </th>
+                    <th>Produto
+                    </th>
+                    <th>Quantidadade
+                    </th>
+                    <th>Valor Unitario
+                    </th>
+                    <th>Total
+                    </th>
+                    <th>Ações
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="produtoEntrada in produtoFornecedorEntradas">
+                    <td data-ng-if="produtoEntrada.ativo">
+                        <img style="width: 3%;" data-ng-src="data:image/jpeg;base64,{{produtoEntrada.fornecedor.imagemCliente}}" alt="" />
+                        {{produtoEntrada.fornecedor.nomeFornecedor}}
+                    </td>
+                    <td data-ng-if="produtoEntrada.ativo">
+                        <img style="width: 12%;" data-ng-src="data:image/jpeg;base64,{{produtoEntrada.produto.imagemCliente}}" alt="" />
+                        {{produtoEntrada.produto.nomeProduto}}
+                    </td>
+                    <td data-ng-if="produtoEntrada.ativo" class="text-center">{{produtoEntrada.quantidadeEntrada}}</td>
+                    <td data-ng-if="produtoEntrada.ativo" class="text-center">{{produtoEntrada.valorUnitario}}</td>
+                    <td data-ng-if="produtoEntrada.ativo" class="text-center"><span>{{ produtoEntrada.totalProduto}}</span></td>
+                    <td data-ng-if="produtoEntrada.ativo" class="text-center">
+                        <button type="button" class="btn btn-default" data-ng-click="delete(produtoEntrada)">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                        </button>
+
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="text-right" colspan="5">Total:{{getTotal()}}
+                    </td>
+                </tr>
+
+            </tfoot>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button class="btn btn-primary" data-ng-click="update()">Alterar</button>
+        </div>
+    </div>
+</div>

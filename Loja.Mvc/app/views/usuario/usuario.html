@@ -1,0 +1,51 @@
+﻿<div class="container" data-ng-controller="usuarioController">
+    <h2 class="sub-header">{{cabecalho}} Usuario</h2>
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+
+    <a class="btn btn-success" data-ng-href="#!/usuario">Lista de Usuario</a>
+    <br />
+    <br />
+    <form name="userForm" novalidate class="form-inline" role="form">
+        <div class="row show-grid">
+
+            <div class="col-md-12" show-errors>
+                <label for="repeatSelect">Perfil do Usuario</label>         
+                <select class="dropdown form-control" name="repeatSelect" id="repeatSelect" data-ng-options="item.nomeUsuarioPerfil for item in usuarioPerfil track by item.usuarioPerfilId" data-ng-model="selected">
+                    </select>
+             
+                <p class="help-block" ng-if="userForm.repeatSelect.$error.required">Perfil de Usuario é obrigatório</p>
+
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-12" show-errors>
+
+                <input type="text" class="form-control" name="nomeUsuario" data-ng-model="usuario.nomeUsuario" required placeholder="Nome" />
+                <p class="help-block" ng-if="userForm.name.$error.required">O nome do Usuario é obrigatório</p>
+
+                <input type="text" class="form-control" name="email" data-ng-model="usuario.email" required placeholder="Email" />
+                <p data-ng-show="userForm.email.$error.email" class="help-block">Informe um e-mail válido.</p>
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-12" show-errors>
+
+                <input type="password" class="form-control" name="senha" data-ng-model="usuario.senha" placeholder="Senha" />
+                <p class="help-block" ng-if="userForm.senha.$error.required">A Senha do Usuario é obrigatório</p>
+            </div>
+        </div>
+        <div class="row show-grid">
+            <upload-imagem info="usuario.imagemUsuario"></upload-imagem>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-6">
+                <button class="btn btn-primary" data-ng-click="salvar()">{{btn}}</button>
+            </div>
+        </div>
+    </form>
+
+</div>

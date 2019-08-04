@@ -1,0 +1,60 @@
+﻿
+<div class="container" data-ng-controller="usuarioPerfilController">
+    <h2 class="sub-header">{{cabecalho}}Perfil de Usuario</h2>
+
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+     <a class="btn btn-success" data-ng-href="#!/usuarioperfil">Lista Perfil de Usuario</a>
+    <br/>
+    <br/>
+    <form name="userForm" novalidate class="form-inline" role="form">
+        <div class="row show-grid">
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="nomeUsuarioPerfil" data-ng-model="usuarioPerfil.nomeUsuarioPerfil" required placeholder="Nome" />
+                <p class="help-block" ng-if="userForm.name.$error.required">O nome do Perfil é obrigatório</p>
+            </div>
+            
+        </div>
+        
+        <div class="row show-grid">
+            <upload-imagem info="usuarioPerfil.imagemUsuarioPerfil"></upload-imagem>
+        </div>
+       
+    </form>
+     <h2 class="sub-header">Permissão de Serviço API</h2>
+    <div class="row show-grid">
+        <div class="col-md-12">
+
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" ng-model="allItemsSelected" ng-change="selectAll()">
+                            </th>
+                            <th>Usuario PerFil
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="ser in servico">
+                        <td>
+                            <input type="checkbox" ng-model="ser.isChecked" ng-change="selectEntity()">
+                        </td>
+                        <td data-title="'Nome">{{ser.nomeServico}}
+                        </td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+     <div class="row show-grid">
+            <div class="col-md-6">
+                <button class="btn btn-primary" data-ng-click="salvar()">{{btn}}</button>
+            </div>
+        </div>
+
+</div>

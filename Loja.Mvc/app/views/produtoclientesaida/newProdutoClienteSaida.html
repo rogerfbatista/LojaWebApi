@@ -1,0 +1,149 @@
+﻿<h2 class="sub-header">Pedido</h2>
+
+<div class="container" data-ng-controller="ProdutoClienteSaidaController">
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+    
+    
+    <a class="btn btn-success" data-ng-href="#!/produtoclientesaida">Lista de Pedido</a>
+    <br/>
+    <br/>
+    <form name="userForm" novalidate class="form-inline" role="form">
+        <div class="row show-grid">
+            <div class="col-md-6" show-errors>
+                <label class="">Cliente</label>
+                <div mass-autocomplete>
+                    <input id="txtcliente" class="form-control input-lg"  placeholder="Cliente" ng-model="dirty.value"
+                        mass-autocomplete-item="optionCliente">
+
+                    <input type="hidden" class="disabled" name="clienteId" ng-model="cliente.clienteId" required />
+                </div>
+            </div>
+            <div class="col-md-6">
+
+                <div style="height: 51px;">
+                    <img style="width: 13%;" class="img-responsive"
+                        data-ng-model="produtoClienteSaida.cliente.imagemCliente"
+                        data-ng-src="data:image/jpeg;base64,{{cliente.imagemCliente}}" />
+                </div>
+                <div>
+                    <div>
+                        CNPJ:  {{cliente.cpfCnpj}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-12">
+            </div>
+        </div>
+        <div class="row show-grid" show-errors>
+            <div class="col-md-6">
+                <label class="">Produto</label>
+                <div mass-autocomplete>
+                    <input id="Text1" class="form-control input-lg"  placeholder="Produto" ng-model="dirty1.value"
+                        mass-autocomplete-item="optionProduto">
+
+                    <input type="hidden" class="disabled" name="produtoId" ng-model="produto.produtoId" required />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div style="height: 71px;">
+                    <img style="width: 13%;" class="img-responsive"
+                        data-ng-model="produtoClienteSaida.cliente.imagemCliente"
+                        data-ng-src="data:image/jpeg;base64,{{produto.imagemCliente}}" />
+                </div>
+            </div>
+            <div style="height: 93px;" class="col-md-3">
+                Codigo:  {{produto.codigoReferencia}}
+                <br />
+                <br />
+                Quantidade Estoque:  {{produtoEstoque.quantidadeEstoque}} 
+            </div>
+        </div>
+        <div class="row show-grid" >
+            <div class="col-md-3" >
+                <label>Quantidade</label>
+                <div show-errors>
+                    <input type="text" class="form-control" name="quantidadeSaida" ng-model="quantidadeSaida" value="1" placeholder="quantidade" required valid-number  />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label>valor unitario</label>
+                <div>
+                    <input type="number" ng-disabled="true" class="form-control" name="valorVenda" ng-model="produtoEstoque.valorVenda" placeholder="valor Unitario" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label>Total</label>
+                <div>
+                    <input type="number" ng-disabled="true" class="form-control" name="Total" value="{{getTotalProduto() }}" placeholder="Total" />
+                </div>
+            </div>
+            <div class="col-md-3" style="height: 81px; padding: 31px;">
+                <button class="btn btn-primary" data-ng-click="adicionar()">Adicionar</button>
+            </div>
+        </div>
+    </form>
+
+    <h2>Produtos</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Produto
+                    </th>
+                    <th>Quantidadade
+                    </th>
+                    <th>Valor Unitario
+                    </th>
+                    <th>Total
+                    </th>
+                    <th>Ações
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="produtoCliente in produtoClienteSaida.produtoClienteSaidaItems">
+
+                    <td>
+                        <img style="width: 12%;" data-ng-src="data:image/jpeg;base64,{{produtoCliente.produto.imagemCliente}}" alt="" />
+                        {{produtoCliente.produto.nomeProduto}}
+                    </td>
+                    <td class="text-center">{{produtoCliente.quantidadeSaida}}</td>
+                    <td class="text-center">{{produtoCliente.valorUnitario}}</td>
+                    <td class="text-center"><span>{{ produtoCliente.subTotal}}</span></td>
+                    <td class="text-center">
+                        <button type="button" class="btn btn-default" data-ng-click="delete(produtoClienteSaida)">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                        </button>
+
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="text-right" colspan="4">Total:{{getTotal()}}
+                    </td>
+                </tr>
+
+            </tfoot>
+        </table>
+    </div>
+    <form name="userFormPagamento" novalidate class="form-inline" role="form">
+        <div class="row show-grid" show-errors>
+            <div class="col-md-12" >
+                <label for="repeatSelect">Formas de Pagamento</label>
+                <select class="dropdown form-control" name="produtoFormasDePagamentoId" id="repeatSelect" data-ng-model="produtoClienteSaida.produtoFormasDePagamentoId" required>
+                    <option data-ng-repeat="forma in produtoFormasDePagamento"  value="{{forma.produtoFormasDePagamentoId}}">{{forma.nomeFormaPagamento}}</option>
+                </select>
+            </div>
+            </div>
+         <div class="row show-grid" >
+            <div class="col-md-12">
+                <button class="btn btn-primary" data-ng-click="save()">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>

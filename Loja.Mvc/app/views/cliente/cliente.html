@@ -1,0 +1,67 @@
+﻿<div class="container" data-ng-controller="clienteController">
+     <h2 class="sub-header">{{cabecalho}} Cliente</h2>
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+    <a class="btn btn-success" data-ng-href="#!/cliente">Lista de Cliente</a>
+    <br/>
+    <br/>
+
+    <form name="userForm" novalidate class="form-inline" role="form">
+        <div class="row show-grid">
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="nomeCliente" data-ng-model="cliente.nomeCliente" required placeholder="Nome" />
+                <p class="help-block" ng-if="userForm.Nome.$error.required">O nome do Cliente é obrigatório</p>
+            </div>
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="cpfCnpj" data-ng-model="cliente.cpfCnpj" placeholder="Cpf - Cnpj" />
+
+            </div>
+        </div>
+        <div class="row show-grid">
+            <upload-imagem info="cliente.imagemCliente"></upload-imagem>
+        </div>
+    </form>
+    <form name="userFormContato" novalidate class="form-inline" role="form">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Cliente Contato</h2>
+            </div>
+        </div>
+        <div class="row show-grid" show-errors>
+            <div class="col-md-6">
+
+                <input type="email" class="form-control" name="email" data-ng-model="email" required placeholder="E-mail" />
+
+                <input type="text" class="form-control" name="telefone" data-ng-model="telefone" placeholder="Telefone" />
+
+                <button class="btn btn-primary" data-ng-click="AdicionarContato()">Adicionar Contato</button>
+
+                <p data-ng-show="userFormContato.email.$error.email" class="help-block">Informe um e-mail válido.</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+
+                        <tr data-ng-repeat="cliente in cliente.clienteContatos">
+                        <td data-title="'Email'">{{cliente.email}}
+                        </td>
+                        <td data-title="'Telefone'">{{cliente.telefone}}
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-default" data-ng-click="deleteContato(cliente)">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </button>
+                        </td>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-6">
+            <button class="btn btn-primary" data-ng-click="salvar()">{{btn}}</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="AngularAuthApp" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="google-site-verification" content="DZehXabJjOJ_DZkclzfbXwxefKGcmX4BzzTu8RXv6Us" />
+
+    <title>Sonic Ti</title>
+    <link href="Content/docs.min.css" rel="stylesheet" />
+    <link href="Content/Index.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="Content/massautocomplete.theme.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="Content/dashboard.css" rel="stylesheet">-->
+    <link href="Content/toaster.css" rel="stylesheet" />
+    <!-- <link href="content/ng-table.css" rel="stylesheet" />-->
+    <link href="Content/ng-table.min.css" rel="stylesheet" />
+
+    <!--    <link href="Content/bootstrap.css" rel="stylesheet">-->
+    <link href="Content/loading-bar.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/social-buttons.css" rel="stylesheet" />
+    <link href="Content/ng-table.min.css" rel="stylesheet" />
+    <link href="Content/ui-grid.css" rel="stylesheet" />
+
+    <!--   <link href="Content/bootstrap-responsive.css" rel="stylesheet">-->
+
+
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <![endif]-->
+
+    <!-- /container -->
+
+    <!-- Le javascript
+            ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.0.2.js"></script>
+    <script src="Scripts/bootstrap-modal.js"></script>
+    <script src="Scripts/LZW.js"></script>
+
+
+    <!--    <script src="Scripts/bootstrap-transition.js"></script>
+    <script src="Scripts/bootstrap-alert.js"></script>
+    <script src="Scripts/bootstrap-modal.js"></script>
+    <script src="Scripts/bootstrap-dropdown.js"></script>
+    <script src="Scripts/bootstrap-scrollspy.js"></script>
+    <script src="Scripts/bootstrap-tab.js"></script>
+    <script src="Scripts/bootstrap-tooltip.js"></script>
+    <script src="Scripts/bootstrap-popover.js"></script>
+    <script src="Scripts/bootstrap-button.js"></script>
+    <script src="Scripts/bootstrap-collapse.js"></script>
+    <script src="Scripts/bootstrap-carousel.js"></script>
+    <script src="Scripts/bootstrap-typeahead.js"></script>-->
+
+
+    <!--    Angularjs*-->
+
+
+
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-local-storage.js"></script>
+    <script src="Scripts/loading-bar.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-sanitize.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-animate.min.js"></script>
+    <script src="Scripts/angular-linq.min.js"></script>
+    <script src="Scripts/ui-bootstrap.js"></script>
+    <script src="Scripts/ui-bootstrap-tpls.js"></script>
+    <script src="Scripts/angular-touch.min.js"></script>
+    <script src="Scripts/ui-grid.js"></script>
+
+
+    <script src="Scripts/angular-signalr-hub.js"></script>
+    <script src="Scripts/toaster.js"></script>
+    <script src="Scripts/lodash.js"></script>
+    <script src="Scripts/ng-table.min.js"></script>
+    <script src="Scripts/massautocomplete.js"></script>
+
+    <script src="Scripts/angular-strap.min.js"></script>
+    <script src="Scripts/angular-strap.tpl.min.js"></script>
+
+    <!-- Load app main script -->
+    <script src="app/app.js?v=5"></script>
+
+
+    <!-- Load services -->
+    <script src="app/services/authService.js?v=5"></script>
+    <script src="app/services/authInterceptorService.js?v=5"></script>
+    <script src="app/services/usuarioPerfilMenuService.js?v=5"></script>
+
+
+    <!-- Load controllers -->
+    <script src="app/controller/indexController.js?v=5"></script>
+    <script src="app/controller/homeController.js?v=5"></script>
+    <script src="app/controller/loginController.js?v=5"></script>
+    <script src="app/controller/empresaController.js?v=5"></script>
+    <script src="app/controller/usuarioPerfilMenuController.js?v=5"></script>
+    <script src="app/controller/usuarioPerfilController.js?v=5"></script>
+    <script src="app/controller/notificationController.js?v=5"></script>
+    <script src="app/controller/removeModalController.js?v=5"></script>
+    <script src="app/controller/usuarioController.js?v=5"></script>
+    <script src="app/controller/fornecedorController.js?v=5"></script>
+    <script src="app/controller/clienteController.js?v=5"></script>
+    <script src="app/controller/produtoTipoController.js?v=5"></script>
+    <script src="app/controller/produtoController.js?v=5"></script>
+    <script src="app/controller/produtoFornecedorEntradaController.js?v=5"></script>
+    <script src="app/controller/listProdutoFornecedorEntradaController.js?v=5"></script>
+    <script src="app/controller/updateProdutoFornecedorEntradaController.js?v=5"></script>
+    <script src="app/controller/produtoClienteSaidaController.js?v=5"></script>
+    <script src="app/controller/listProdutoClienteSaidaController.js?v=5"></script>
+    <script src="app/controller/updateProdutoClienteSaidaController.js?v=5"></script>
+    <script src="app/controller/modalController.js?v=5"></script>
+    <script src="app/controller/contatoController.js?v=5"></script>
+    <script src="app/controller/listProdutoEstoqueController.js?v=5"></script>
+    <script src="app/controller/updateProdutoEstoqueController.js?v=5"></script>
+    <script src="app/controller/listMenuController.js?v=5"></script>
+    <script src="app/controller/menuController.js?v=5"></script>
+
+    
+
+    <!-- Load custom Resources -->
+    <script src="app/resource/empresaResouce.js?v=5"></script>
+    <script src="app/resource/usuarioPerfilResouce.js?v=5"></script>
+    <script src="app/resource/usuarioResouce.js?v=5"></script>
+    <script src="app/resource/fornecedorResouce.js?v=5"></script>
+    <script src="app/resource/clienteResouce.js?v=5"></script>
+    <script src="app/resource/produtoTipoResouce.js?v=5"></script>
+    <script src="app/resource/produtoResouce.js?v=5"></script>
+    <script src="app/resource/produtoFornecedorEntradaResource.js?v=5"></script>
+    <script src="app/resource/produtoClienteSaidaResource.js?v=5"></script>
+    <script src="app/resource/produtoEstoqueResouce.js?v=5"></script>
+    <script src="app/resource/produtoFormasdePagamentoResouce.js?v=5"></script>
+    <script src="app/resource/contatoResouce.js?v=5"></script>
+    <script src="app/resource/menuResouce.js?v=5"></script>
+    <script src="app/resource/menuTipoResouce.js?v=5"></script>
+    <script src="app/resource/servicoResouce.js?v=5"></script>
+    
+
+    <!-- Load custom directives -->
+    <script src="app/directives/showErrors.js?v=5"></script>
+    <script src="app/directives/directive.js?v=5"></script>
+    <script src="app/directives/UploadImagem/uploadImagem.js?v=5"></script>
+    <script src="app/directives/table/table.js?v=5"></script>
+</head>
+
+<body data-ng-controller="indexController">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="row-fluid">
+                    <div class="col-sm-10">
+
+
+                        <div data-ng-hide="!authentication.isAuth" class="dropdown span4" data-ng-controller="notificationController as n">
+                            <a href="" class="btn btn-link dropdown-toggle navbar-brand" id="dropdownMenu1" data-toggle="dropdown"><small>Sonic TI</small><span class="badge alert-danger">{{n.notifications.length}}</span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation" data-ng-repeat="msg in n.notifications">
+                                    <a href="javascript:void(0)" role="menuitem" tabindex="-1" data-ng-click="n.read($index)">{{msg}}</a>
+                                    <hr />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <div class="col-sm-2 pull-right">
+
+                        <a class="btn-link navbar-brand" href="" data-ng-hide="!authentication.isAuth" data-ng-click="logOut()"><small>Logout</small></a>
+                    </div>
+                </div>
+
+                <span data-ng-hide="authentication.isAuth" class="navbar-brand"><small>Visite nosso protótipo beta com <b>Email:</b> visitante <b>Senha:</b>visitante</small></span>
+            </div>
+            <div id="navbar" data-ng-controller="loginController" class="navbar-collapse collapse">
+                <form data-ng-hide="authentication.isAuth" class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" placeholder="Email" class="form-control" data-ng-model="loginData.userName" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control" data-ng-model="loginData.password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-ng-click="login()">Sign in</button>
+
+                    <div data-ng-hide="message == ''" class="alert alert-info ">
+                        <a class="close" data-dismiss="alert" href="#"></a>
+                        <p>{{message}}</p>
+                    </div>
+
+                </form>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div data-ng-controller="indexController" class="row" style="padding: 49px; margin-left: -65px; position: relative; z-index: 1;">
+            <nav data-ng-hide="!authentication.isAuth" class="navbar navbar-inverse sidebar" role="navigation">
+                <div class="container-fluid">
+                    <div class="col-sm-3 col-md-2  collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li data-ng-repeat="me in menus">
+                                <a data-ng-href="{{me.menu.link}}" class="dropdown-toggle" data-toggle="dropdown">{{me.menu.nomeMenu}} 
+                                    <!--            <span class="caret"></span><span style="font-size: 16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span>-->
+                                     <img style="width: 15%;" class="img-responsive img-circle pull-right" data-ng-model="me.menu.imagemMenu" data-ng-src="data:image/jpeg;base64,{{me.menu.imagemMenu}}"  />
+                                </a>
+                                <ul class="dropdown-menu forAnimate" role="menu" data-ng-repeat="m in me.menu.menuCollection">
+                                    <li>
+                                        <a  data-ng-href="{{m.link}}">{{ m.nomeMenu }}
+                                            <img style="width: 15%;" class="img-responsive img-circle pull-right" data-ng-model="m.imagemMenu" data-ng-src="data:image/jpeg;base64,{{m.imagemMenu}}"  />
+                                            </a>
+                              
+                                    </li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div>
+          <img style="width: 6%;" data-ng-hide="!authentication.isAuth" class="img-responsive img-circle pull-left" src="" data-ng-hide="!authentication.isAuth" data-ng-src="data:image/jpeg;base64,{{authentication.empresaImagem}}" id="Img1" alt="" />
+                
+                <h5 data-ng-hide="!authentication.isAuth" class="pull-left">{{authentication.nomeEmpresa}}</h5>
+
+                <h5 data-ng-hide="!authentication.isAuth" class="pull-right">Seja Bem vindo {{authentication.userName}}</h5>
+                <img style="width: 6%;" class="img-responsive img-circle pull-right" src="" data-ng-hide="!authentication.isAuth" data-ng-src="data:image/jpeg;base64,{{authentication.imagemUsuario}}" id="photo-id" alt="" />
+                <br/>
+                <br/>
+                <div class="main" data-ng-view>
+               
+                </div>
+            </div>
+            <toaster-container toaster-options="{'position-class': 'toast-bottom-right'}"></toaster-container>
+        </div>
+    </div>
+
+</body>
+</html>

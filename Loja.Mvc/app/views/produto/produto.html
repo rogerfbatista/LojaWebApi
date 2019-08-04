@@ -1,0 +1,46 @@
+﻿<div class="container" data-ng-controller="produtoController">
+    <h2 class="sub-header">{{cabecalho}} Produto</h2>
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+     <a class="btn btn-success" data-ng-href="#!/produto">Lista de Produto</a>
+    <br/>
+    <br/>
+    
+
+    <form name="userForm" novalidate class="form-inline" role="form">
+        <div class="row show-grid">
+
+            <div class="col-md-12" show-errors>
+                <label for="repeatSelect">Tipo de Produto</label>
+                <select class="dropdown form-control" name="repeatSelect" id="repeatSelect" data-ng-model="produto.produtoTipoId" required>
+                    <option data-ng-repeat="tipo in produtoTipo" value="{{tipo.produtoTipoId}}">{{tipo.nomeProdutoTipo}}</option>
+                </select>
+                <p class="help-block" ng-if="userForm.repeatSelect.$error.required">Tipo de produto é obrigatório</p>
+
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-6" show-errors>
+
+                <input type="text" class="form-control" name="nomeProduto" data-ng-model="produto.nomeProduto" required placeholder="Nome" />
+                <p class="help-block" ng-if="userForm.name.$error.required">O nome do Produto é obrigatório</p>
+            </div>
+            <div class="col-md-6" show-errors>
+                <input type="text" class="form-control" name="codigoReferencia" data-ng-model="produto.codigoReferencia" required placeholder="Codigo de Referencia" />
+                <p class="help-block" ng-if="userForm.name.$error.required">Código de Referencia é obrigatório</p>
+            </div>
+        </div>
+        <div class="row show-grid">
+            <upload-imagem info="produto.imagemCliente"></upload-imagem>
+        </div>
+
+
+        <div class="row show-grid">
+            <div class="col-md-6">
+                      <button class="btn btn-primary" data-ng-click="salvar()">{{btn}}</button>
+            </div>
+        </div>
+    </form>
+
+</div>

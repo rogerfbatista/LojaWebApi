@@ -1,0 +1,14 @@
+﻿<h2 class="sub-header">Lista de Clientes </h2>
+
+<div data-ng-controller="clienteController">
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+
+    <a class="btn btn-primary" data-ng-href="#!/cliente/new">Novo Cliente</a>
+    <br />
+    <br />
+    
+        <table-directive grid="gridDirective"></table-directive>
+
+</div>

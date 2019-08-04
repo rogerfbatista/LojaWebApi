@@ -1,0 +1,15 @@
+﻿<h2 class="sub-header">Lista de Empresa</h2>
+
+<div data-ng-controller="empresaController">
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+
+    <a class="btn btn-primary" data-ng-href="#!/empresa/new">Nova Empresa</a>
+    <br />
+    <br />
+    
+    <table-directive grid="gridDirective"></table-directive>
+
+  
+</div>

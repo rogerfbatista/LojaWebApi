@@ -1,0 +1,20 @@
+﻿<div class="table-responsive">
+    <div class="row">
+        <div class="col-md-12">
+            <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+        </div>
+    </div>
+    <div class="row">
+        <div ng-show="enableSearchText" class="col-md-12">
+            <span class="glyphicon glyphicon-filter"></span>
+            <input data-ng-model="searchText" data-ng-change="refreshData()" placeholder="Pesquisar...">
+        </div>
+    </div>
+    <br />
+ 
+    <div class="row">
+        <div class="col-md-12">
+            <div ui-grid="gridOptions" ui-grid-pagination  class="grid"></div>
+        </div>
+    </div>
+</div>

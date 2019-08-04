@@ -1,0 +1,192 @@
+﻿<div class="container" data-ng-controller="menuController">
+        <h2 class="sub-header">{{cabecalho}} Menu</h2>
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+    <a class="btn btn-success" data-ng-href="#!/menu">Lista de menu</a>
+    <br/>
+    <br/>
+    
+
+    <form name="userForm" novalidate class="form-inline" role="form">
+        <div class="row show-grid">
+
+            <div class="col-md-12" show-errors>
+                <label for="repeatSelect">Tipo de Menu</label>
+                <select class="dropdown form-control" name="repeatSelect" id="repeatSelect" data-ng-model="menu.menuTipoId" required>
+                    <option data-ng-repeat="tipo in menuTipo" value="{{tipo.menuTipoId}}">{{tipo.nomeMenuTipo}}</option>
+                </select>
+                <p class="help-block" ng-if="menu.menuTipoId == 0">Tipo de menu é obrigatório</p>
+
+            </div>
+        </div>
+
+        <div ng-show="menu.menuTipoId == 2" class="row show-grid">
+
+            <div class="col-md-12" show-errors>
+                <label for="repeatSelect1">Menu</label>
+                <select class="dropdown form-control" name="repeatSelect1" id="repeatSelect1" data-ng-model="menu.menuIdFk" required>
+                    <option data-ng-repeat="menu in menuPrincipal" value="{{menu.menuId}}">{{menu.nomeMenu}}</option>
+                </select>
+                <p class="help-block" ng-if="userForm.repeatSelect1.$error.required">Menu é obrigatório</p>
+
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4" show-errors>
+
+                <input type="text" class="form-control" name="nomeMenu" data-ng-model="menu.nomeMenu" required placeholder="Nome" />
+                <p class="help-block" ng-if="userForm.name.$error.required">O nome do Produto é obrigatório</p>
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="link" data-ng-model="menu.link" placeholder="Link" />
+
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="ordem" data-ng-model="menu.ordem" placeholder="ordem" valid-number />
+
+            </div>
+        </div>
+      
+        <div class="row show-grid">
+            <upload-imagem info="menu.imagemMenu"></upload-imagem>
+        </div>
+
+        <h2 class="sub-header">Usuario Perfil Acesso</h2>
+        <div class="row show-grid">
+            <div class="col-md-12">
+
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" ng-model="allItemsSelected" ng-change="selectAll()">
+                                </th>
+                                <th>Usuario PerFil
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat="perfil in usuarioPerfils">
+                            <td>
+                                <input type="checkbox" ng-model="perfil.isChecked" ng-change="selectEntity()">
+                            </td>
+                            <td data-title="'Nome">{{perfil.nomeUsuarioPerfil}}
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-6">
+               <button class="btn btn-primary" data-ng-click="salvar()">{{btn}}</button>
+            </div>
+        </div>
+    </form>
+    <h3 class="sub-header">Links Disponiveis</h3>
+    <div class="row show-grid">
+        <div class="col-md-12">
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Modulo
+                            </th>
+                            <th>Novo
+                            </th>
+                            <th>Alterar
+                            </th>
+                            <th>Lista
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Home</td>
+                            <td></td>
+                            <td></td>
+                            <td>#!/home</td>
+                        </tr>
+                        <tr>
+                            <td>Contato</td>
+                            <td></td>
+                            <td></td>
+                            <td>#!/contato</td>
+                        </tr>
+                        <tr>
+                            <td>Empresa</td>
+                            <td>#!/empresa/new</td>
+                            <td>#!/empresa/update/:id</td>
+                            <td>#!/empresa</td>
+                        </tr>
+                        <tr>
+                            <td>UsuarioPerfil</td>
+                            <td>#!/usuarioperfil/new</td>
+                            <td>#!/usuarioperfil/update/:id</td>
+                            <td>#!/usuarioperfil</td>
+                        </tr>
+                        <tr>
+                            <td>Usuario</td>
+                            <td>#!/usuario/new</td>
+                            <td>#!/usuario/update/:id</td>
+                            <td>#!/usuario</td>
+                        </tr>
+                        <tr>
+                            <td>Fornecedor</td>
+                            <td>#!/fornecedor/new</td>
+                            <td>#!/fornecedor/update/:id</td>
+                            <td>#!/fornecedor</td>
+                        </tr>
+                        <tr>
+                            <td>Cliente</td>
+                            <td>#!/cliente/new</td>
+                            <td>#!/cliente/update/:id</td>
+                            <td>#!/cliente</td>
+                        </tr>
+                        <tr>
+                            <td>ProdutoTipo</td>
+                            <td>#!/produtotipo/new</td>
+                            <td>#!/produtotipo/update/:id</td>
+                            <td>#!/produtotipo</td>
+                        </tr>
+                        <tr>
+                            <td>Produto</td>
+                            <td>#!/produto/new</td>
+                            <td>#!/produto/update/:id</td>
+                            <td>#!/produto</td>
+                        </tr>
+                        <tr>
+                            <td>Produto Fornecedor Entrada</td>
+                            <td>#!/produtofornecedorentrada/new</td>
+                            <td>#!/produtofornecedorentrada/update/:id/:nomeFornecedor/:dataEmissao/:dataVencimento/:fornecedorId</td>
+                            <td>#!/produtofornecedorentrada</td>
+                        </tr>
+                        <tr>
+                            <td>Produto Cliente Saida</td>
+                            <td>#!/produtoclientesaida/new</td>
+                            <td>#!/produtoclientesaida/update/:id</td>
+                            <td>#!/produtoclientesaida</td>
+                        </tr>
+                        <tr>
+                            <td>Produto Estoque</td>
+                            <td>#!/produtoestoque/new</td>
+                            <td>#!/produtoestoque/update/:id</td>
+                            <td>#!/produtoestoque</td>
+                        </tr>
+                        <tr>
+                            <td>Menu</td>
+                            <td>#!/menu/new</td>
+                            <td>#!/menu/update/:id</td>
+                            <td>#!/menu</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

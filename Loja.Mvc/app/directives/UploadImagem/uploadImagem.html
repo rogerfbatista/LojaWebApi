@@ -1,0 +1,10 @@
+﻿
+     <div class="col-md-12">
+         
+         <img style="width: 15%;" ng-src="data:image/jpeg;base64,{{customerInfo}}" id="photo-empresa">
+         <input type="file" name="imagem"  accept="image/png, image/jpeg"  id="uploadimagem">
+     <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+          </div>
+

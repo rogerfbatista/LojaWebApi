@@ -1,0 +1,40 @@
+﻿<div class="container" data-ng-controller="homeController">
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+    <div class="row" style="margin-top: 24px;">
+        <div class="col-md-7">
+            <h1>Ola, Seja bem vindo a Sonic TI</h1>
+            <br />
+            <a target="_blank" href="https://imasters.com.br/desenvolvimento/software/video-bolovo-um-problema-antigo-de-arquitetura-de-software-7masters/?trace=1519021197&source=single"  title="Arquitetura Bolovo ?"> <h4>Arquitetura Bolovo ?</h4></a>
+            <br />
+            &bull; Faça uma migração do  seus sistemas corporativos para melhores tecnologias do mercado.
+            <br />
+            &bull; layout bootstrap responsivo.
+            <img src="../../Content/images/apple_iphone.png" alt="">
+            <img src="../../Content/images/smartphone_tablet.png" alt="">
+            <img src="../../Content/images/my_computer.png" alt="">
+            <br />
+            <br />
+            &bull; Forneça suas <b>APIS </b>em serviços REST  em um formato  simples e leve 
+            <br />
+            JSON("JavaScript Object Notation")
+            <br />
+            &bull; Receba notificações de todas ações dos usuários do sistemas. 
+            compativel com todas tecnologias de mercado. consumo através do protocolo HTTP com segurança  e autenticação dos serviços <b>APIS </b>
+            <br />
+            <a class="btn btn-link" data-ng-click="openModal(null, $index)" href="">&bull; Click aqui</a>e veja a lista de Serviços disponíveis <b>APIS </b>
+        
+        </div>
+        <div class="col-md-5">
+            <ul class="">
+                <li class="span4">
+                    <a href="#" class="thumbnail">
+                        <img src="../../Content/images/sistema.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

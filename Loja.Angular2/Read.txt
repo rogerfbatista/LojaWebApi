@@ -1,0 +1,19 @@
+﻿
+instalar o node.js
+Instalar o angular
+
+cmd
+navegar pasta do projeto
+
+install --save @angular/common
+
+deletar a pasta node_modules
+
+restaurar pacote 
+
+
+
+compilar o typeSripts
+
+C:\Users\Bianca\Documents\Visual Studio 2012\Projects\Loja\Loja.Angular2\node_modules\.bin\tcs
+

@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3483B5EE-7AFB-4D0D-970C-446F0BBEF793}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Loja.Data</RootNamespace>
+    <AssemblyName>Loja.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.IndexingExtensions, Version=1.0.1.26117, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.IndexingExtensions.1.0.1\lib\net40\EntityFramework.IndexingExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Client, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Client.4.2.0\lib\net45\NuGet.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Common, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Common.4.2.0\lib\net45\NuGet.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.ContentModel, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.ContentModel.4.2.0\lib\net45\NuGet.ContentModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Frameworks, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Frameworks.4.2.0\lib\net45\NuGet.Frameworks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Packaging, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Packaging.4.2.0\lib\net45\NuGet.Packaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Packaging.Core, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Packaging.Core.4.2.0\lib\net45\NuGet.Packaging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Packaging.Core.Types, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Packaging.Core.Types.4.2.0\lib\net45\NuGet.Packaging.Core.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Repositories, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Repositories.4.2.0\lib\net45\NuGet.Repositories.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.RuntimeModel, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.RuntimeModel.4.2.0\lib\net45\NuGet.RuntimeModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Versioning, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Versioning.4.2.0\lib\net45\NuGet.Versioning.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexto\LojaContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Mapping\ClienteContatoMap.cs" />
+    <Compile Include="Models\Mapping\ClienteMap.cs" />
+    <Compile Include="Models\Mapping\EmpresaClienteMap.cs" />
+    <Compile Include="Models\Mapping\EmpresaContatoMap.cs" />
+    <Compile Include="Models\Mapping\EmpresaFornecedorMap.cs" />
+    <Compile Include="Models\Mapping\EmpresaMap.cs" />
+    <Compile Include="Models\Mapping\FornecedorContatoMap.cs" />
+    <Compile Include="Models\Mapping\FornecedorMap.cs" />
+    <Compile Include="Models\Mapping\MenuMap.cs" />
+    <Compile Include="Models\Mapping\MenuTipoMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoClienteSaidaMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoEstoqueMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoFormasDePagamentoMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoFornecedorEntradaMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoMap.cs" />
+    <Compile Include="Models\Mapping\ProdutoTipoMap.cs" />
+    <Compile Include="Models\Mapping\ServicoMap.cs" />
+    <Compile Include="Models\Mapping\ServicoUsuarioPerfilMap.cs" />
+    <Compile Include="Models\Mapping\UsuarioMap.cs" />
+    <Compile Include="Models\Mapping\UsuarioPerfilMap.cs" />
+    <Compile Include="Models\Mapping\UsuarioPerfilMenuMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorys\ClienteRepository.cs" />
+    <Compile Include="Repositorys\ClienteContatoRepository.cs" />
+    <Compile Include="Repositorys\ProdutoClienteSaidaItemRepository.cs" />
+    <Compile Include="Repositorys\EmailRepository.cs" />
+    <Compile Include="Repositorys\EmpresaRepository.cs" />
+    <Compile Include="Repositorys\EmpresaClienteRepository.cs" />
+    <Compile Include="Repositorys\EmpresaContatoRepository.cs" />
+    <Compile Include="Repositorys\EmpresaFornecedorRepository.cs" />
+    <Compile Include="Repositorys\FornecedorRepository.cs" />
+    <Compile Include="Repositorys\FornecedorContatoRepository.cs" />
+    <Compile Include="Repositorys\MenuRepository.cs" />
+    <Compile Include="Repositorys\MenuTipoRepository.cs" />
+    <Compile Include="Models\Mapping\ProdutoClienteSaidaItemMap.cs" />
+    <Compile Include="Repositorys\ProdutoRepository.cs" />
+    <Compile Include="Repositorys\ProdutoTipoRepository.cs" />
+    <Compile Include="Repositorys\ProdutoClienteSaidaRepository.cs" />
+    <Compile Include="Repositorys\ProdutoEstoqueRepository.cs" />
+    <Compile Include="Repositorys\ProdutoFormasDePagamentoRepository.cs" />
+    <Compile Include="Repositorys\ProdutoFornecedorEntradaRepository.cs" />
+    <Compile Include="Repositorys\RepositoryBase.cs" />
+    <Compile Include="Repositorys\ServicoRepository.cs" />
+    <Compile Include="Repositorys\ServicoUsuarioPerfilRepository.cs" />
+    <Compile Include="Repositorys\UsuarioRepository.cs" />
+    <Compile Include="Repositorys\UsuarioPerfilRepository.cs" />
+    <Compile Include="Repositorys\UsuarioPerfilMenuRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Loja.Common\Loja.Common.csproj">
+      <Project>{d8a13d9d-99d8-4c41-a5a7-ac4b1c7a54ac}</Project>
+      <Name>Loja.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Loja.Domain\Loja.Domain.csproj">
+      <Project>{1d86c98e-fb69-48a4-a8a0-c318552da133}</Project>
+      <Name>Loja.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,57 @@
+﻿<h2 class="sub-header">Consulta Produto Estoque</h2>
+
+<div class="container" data-ng-controller="updateprodutoEstoqueController">
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+    
+     <a class="btn btn-success" data-ng-href="#!/produtoestoque">Lista de Estoque</a>
+    <br/>
+    <br/>
+    
+
+    <form name="userForm" novalidate class="form-inline" role="form">
+        <div class="row show-grid">
+
+            <div class="col-md-6">
+                <label class="">Produto</label>
+                <div>
+                    <img style="width: 15%;" id="imagemCliente" data-ng-src="data:image/jpeg;base64,{{produtoEstoque.imagemCliente}}" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="">Nome Produto</label>
+                <div style="height:81px;">
+                    <input type="text" ng-disabled="true" class="form-control" name="nomeProduto" ng-model="produtoEstoque.nomeProduto" placeholder="Nome do Produto">
+                </div>
+            </div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-md-3">
+                <label class="control-label">Quantidade Vendida</label>
+                <div>
+                    <input type="text"  ng-disabled="true"  class="form-control" name="quantidadeVendida" ng-model="produtoEstoque.quantidadeVendida" placeholder="Quantidade Vendida">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label class="">Quantidade Entrada</label>
+                <div>
+                    <input type="text"  ng-disabled="true"  class="form-control" name="quantidadeEntrada" ng-model="produtoEstoque.quantidadeEntrada" placeholder="Quantidade Entrada">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label class="">Quantidade Estoque</label>
+                <div>
+                    <input type="text"  ng-disabled="true"  class="form-control" name="quantidadeEstoque" ng-model="produtoEstoque.quantidadeEstoque" placeholder="Quantidade Estoque">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label class="">Valor Venda</label>
+                <div>
+                    <input type="text"  ng-disabled="true"  class="form-control" name="valorVenda" ng-model="produtoEstoque.valorVenda" placeholder="Quantidade Estoque">
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>

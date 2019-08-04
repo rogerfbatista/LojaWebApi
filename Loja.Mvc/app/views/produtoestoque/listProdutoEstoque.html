@@ -1,0 +1,11 @@
+﻿<h2 class="sub-header">Lista de Estoque</h2>
+
+<div data-ng-controller="listProdutoEstoqueController">
+    <div>
+        <alert ng-repeat="alert in alerts.items" type="{{alert.type}}" close="alerts.close($index)">{{alert.msg}}</alert>
+    </div>
+    <br />
+
+    <table-directive grid="gridDirective"></table-directive>
+
+</div>
