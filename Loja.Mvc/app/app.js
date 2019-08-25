@@ -117,8 +117,8 @@ app.config(['$routeProvider', '$locationProvider'
     }
 ]);
 
-//var serviceBase = 'http://localhost:12165/';
-var serviceBase = 'http://www.sonicapi11.somee.com/';
+var serviceBase = 'http://localhost:12165/';
+//var serviceBase = 'http://www.sonicapi11.somee.com/';
 app.constant('ngAuthSettings', {
     apiServiceBaseUri: serviceBase,
     clientId: 'ngAuthApp'
