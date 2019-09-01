@@ -9,18 +9,18 @@ namespace Loja.Common
 {
     public class EmailManager
     {
-        
 
-        public static async Task EnviarEmailStaticTask(string assunto,StringBuilder corpo, string destinario, List<Attachment> listAnexo)
+
+        public static async Task EnviarEmailStaticTask(string assunto, StringBuilder corpo, string destinario, List<Attachment> listAnexo)
         {
-            const string sUserName = "rogerfbatista@gmail.com";
-            const string sPassword = "031203bi";
+            const string sUserName = "";
+            const string sPassword = "";
 
 
             var objEmail = new MailMessage();
-            
-                objEmail.To.Add(destinario);
-            
+
+            objEmail.To.Add(destinario);
+
 
             foreach (var anexo in listAnexo)
             {
@@ -55,8 +55,8 @@ namespace Loja.Common
                 throw new Exception(e.Message + e.StatusCode);
             }
         }
-      
-        public async Task EnviarEmail(string assunto,StringBuilder corpo, List<string> listDestinario, List<Attachment> listAnexo)
+
+        public async Task EnviarEmail(string assunto, StringBuilder corpo, List<string> listDestinario, List<Attachment> listAnexo)
         {
 
             const string sUserName = "rogerfbatista@sonicti.somee.com";
