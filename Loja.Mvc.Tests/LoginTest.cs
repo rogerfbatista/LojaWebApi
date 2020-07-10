@@ -26,8 +26,8 @@ namespace Loja.Mvc.Tests
 
             var name = By.TagName("input");
             var element = driver.FindElements(name);
-            element[0].SendKeys("rogerfbatista@gmail.com");
-            element[1].SendKeys("bianca");
+            element[0].SendKeys(" visitante");
+            element[1].SendKeys(" visitante");
 
 
             var btn = By.ClassName("btn-primary");
@@ -57,7 +57,7 @@ namespace Loja.Mvc.Tests
 
             var name = By.TagName("input");
             var element = driver.FindElements(name);
-            element[0].SendKeys("rogerfbatista@gmail.com");
+            element[0].SendKeys(" visitante");
             element[1].SendKeys("123456");
 
 
