@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using Loja.WebApi.Compression;
 using Loja.WebApi.Security;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -9,6 +10,7 @@ namespace Loja.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
+           config.MessageHandlers.Add(new CompressedRequestHandler());
             config.SetCorsPolicyProviderFactory(new CorsPolicyFactory());
             config.EnableCors();
 

@@ -79,7 +79,7 @@
                 $scope.getPage = function () {
 
                     $scope.gridDirective.get({ pageNumber: paginationOptions.pageNumber, pageSize: paginationOptions.pageSize, empresaId: paginationOptions.empresaId }).$promise.then(function (response) {
-                        debugger;
+                        
                         $scope.gridOptions.totalItems = response[0].recordsTotal;
                         var firstRow = (paginationOptions.pageNumber - 1) * paginationOptions.pageSize;
                         $scope.gridOptions.data = response[0].list;
@@ -94,7 +94,7 @@
                     if (useExternalPagination) {
 
                         $scope.gridDirective.getSerachText({ empresaId: paginationOptions.empresaId}).$promise.then(function (response) {
-                            debugger;
+                         
                             data = response;
 
                         }, function (error) {

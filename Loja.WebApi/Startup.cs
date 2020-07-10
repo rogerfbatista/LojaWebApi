@@ -3,6 +3,7 @@ using System;
 using System.Web.Http;
 using Loja.Application.Interfaces;
 using Loja.Startup;
+using Loja.WebApi.Compression;
 using Loja.WebApi.Security;
 using Microsoft.Owin;
 using Microsoft.Owin.Cors;
@@ -25,7 +26,7 @@ namespace Loja.WebApi
 
 
             var config = new HttpConfiguration();
-            ConfigureOAuth(app,CreateKernel());
+        ConfigureOAuth(app,CreateKernel());
             WebApiConfig.Register(config);
             app.UseNinjectMiddleware(CreateKernel).UseNinjectWebApi(config);
           app.UseCors(CorsOptions.AllowAll);
