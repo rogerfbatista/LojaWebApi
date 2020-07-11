@@ -6,6 +6,12 @@ namespace Loja.Mvc.Tests
     [TestClass]
     public class LoginTest : BaseTest
     {
+        public LoginTest()
+            : base(true)
+        {
+
+        }
+
         [TestMethod]
         public void Login_Sonic_Ti_Valido()
         {
@@ -24,9 +30,11 @@ namespace Loja.Mvc.Tests
         [TestMethod]
         public void Login_Sonic_Ti_InValido()
         {
+
+
             this.Login("visitante", "123456");
 
-           this.AguardarSegundos(2);
+            this.AguardarSegundos(2);
 
             var smallEletemnt = this.ProcurarMuitosElemento(By.TagName("p"))[0].Text;
 

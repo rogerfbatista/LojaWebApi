@@ -6,6 +6,10 @@ namespace Loja.Mvc.Tests
     [TestClass]
     public class ProdutoTest : BaseTest
     {
+        public ProdutoTest():base(false)
+        {
+
+        }
         [TestMethod]
         public void Cadastro_Produto_A_Salvar()
         {

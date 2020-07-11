@@ -12,25 +12,27 @@ namespace Loja.Mvc.Tests
 {
     public abstract class BaseTest
     {
-        //background
-        //ChromeOptions option = new ChromeOptions();
-        //option.AddArgument("--headless");
-        //IWebDriver driver = new ChromeDriver(option);
+
 
         protected readonly IWebDriver _driver;
         public string _url { get; }
-
+      
         private SelectElement _selectElement;
-        public BaseTest()
+        public BaseTest(bool backGround)
         {
             _url = "http://www.sonic.somee.com/";
-            _driver = new ChromeDriver();
+
+            ChromeOptions option = new ChromeOptions();
+            if (backGround)
+                option.AddArgument("--headless");
+
+            _driver = new ChromeDriver(option);
         }
 
 
         [TestInitialize]
         public void Inicializar()
-        {
+        {           
             _driver.Navigate().GoToUrl(this._url);
             _driver.Manage().Window.Maximize();
 
