@@ -4,14 +4,14 @@ using OpenQA.Selenium;
 namespace Loja.Mvc.Tests
 {
     [TestClass]
-    public class ProdutoTest : BaseTest
+    public class A_ProdutoTest : BaseTest
     {
-        public ProdutoTest():base(false)
+        public A_ProdutoTest():base(false)
         {
 
         }
         [TestMethod]
-        public void Cadastro_Produto_A_Salvar()
+        public void A_Cadastro_Produto_Salvar()
         {
 
             this.Login("visitante", "visitante");
@@ -53,7 +53,7 @@ namespace Loja.Mvc.Tests
 
 
         [TestMethod]
-        public void Cadastro_Produto_B_Alterar()
+        public void B_Cadastro_Produto_Alterar()
         {
 
             this.Login("visitante", "visitante");
@@ -74,17 +74,19 @@ namespace Loja.Mvc.Tests
 
             this.ProcurarElemento(By.ClassName("glyphicon-pencil")).Click();
 
-            this.AguardarSegundos(1);
+            this.AguardarSegundos(2);
 
             this.ProcurarElemento(By.Name("nomeProduto")).Clear();
 
-            this.AguardarSegundos(1);
+            this.AguardarSegundos(2);
 
             this.ProcurarElemento(By.Name("nomeProduto")).SendKeys("Tenis Vans 38-40");
 
+            this.AguardarSegundos(2);
+
             this.ProcurarElemento(By.Name("codigoReferencia")).Clear();
 
-            this.AguardarSegundos(1);
+            this.AguardarSegundos(2);
 
             this.ProcurarElemento(By.Name("codigoReferencia")).SendKeys("123456");
 
@@ -95,7 +97,7 @@ namespace Loja.Mvc.Tests
             this.Fim();
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void Cadastro_Produto_C_Excluir()
         {
 

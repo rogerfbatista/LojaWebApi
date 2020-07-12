@@ -52,7 +52,7 @@ function ($scope, $q, $timeout, $sce, $modal, ProdutoClienteSaida, Cliente, Prod
                 value: response[i].nomeCliente,
                 obj: response[i],
                 label: $sce.trustAsHtml(
-                  '<div class="row">' +
+                  '<div class="row Cliente">' +
                   ' <div class="col-xs-5">' +
                   '  <strong>' + response[i].nomeCliente + '</strong>' +
                   ' </div>' +
@@ -100,7 +100,7 @@ function ($scope, $q, $timeout, $sce, $modal, ProdutoClienteSaida, Cliente, Prod
                 value: response[i].produto.nomeProduto,
                 obj: response[i],
                 label: $sce.trustAsHtml(
-                  '<div class="row">' +
+                  '<div class="row Produto">' +
                   ' <div class="col-xs-5">' +
                   '  <strong>' + response[i].produto.nomeProduto + '</strong>' +
                   ' </div>' +

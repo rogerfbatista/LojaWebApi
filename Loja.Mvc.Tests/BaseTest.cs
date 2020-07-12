@@ -16,11 +16,12 @@ namespace Loja.Mvc.Tests
 
         protected readonly IWebDriver _driver;
         public string _url { get; }
-      
+
         private SelectElement _selectElement;
         public BaseTest(bool backGround)
         {
-            _url = "http://www.sonic.somee.com/";
+            // _url = "http://www.sonic.somee.com/";
+            _url = "http://localhost/index.html";
 
             ChromeOptions option = new ChromeOptions();
             if (backGround)
@@ -32,9 +33,12 @@ namespace Loja.Mvc.Tests
 
         [TestInitialize]
         public void Inicializar()
-        {           
+        {
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
             _driver.Navigate().GoToUrl(this._url);
             _driver.Manage().Window.Maximize();
+         
+           
 
         }
 
@@ -42,6 +46,21 @@ namespace Loja.Mvc.Tests
         {
             return _driver.FindElement(id);
         }
+
+        public bool ExisteElemento(By id)
+        {
+            try
+            {
+                this.ProcurarElemento(id);
+                return false;
+            }
+            catch (NoSuchElementException)
+            {
+                return true;
+            }
+        }
+
+      
 
 
         public ReadOnlyCollection<IWebElement> ProcurarMuitosElemento(By id)
@@ -81,7 +100,7 @@ namespace Loja.Mvc.Tests
 
             SendKeys.SendWait(arquivo);
 
-            this.AguardarSegundos(1);
+            this.AguardarSegundos(3);
 
             SendKeys.SendWait("{ENTER}");
         }
@@ -101,12 +120,11 @@ namespace Loja.Mvc.Tests
             element[0].SendKeys(email);
             element[1].SendKeys(senha);
 
+            this.ProcurarElemento(By.XPath("//button[.='Sign in']")).Click();
 
-            var btn = By.ClassName("btn-primary");
+            //var js = (IJavaScriptExecutor)_driver;
+            //js.ExecuteScript("document.body.style.zoom='90%'");
 
-            var btnElement = this.ProcurarElemento(btn);
-
-            btnElement.Click();
         }
     }
 }
