@@ -7,6 +7,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Threading;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace Loja.Mvc.Tests
 {
@@ -20,8 +21,8 @@ namespace Loja.Mvc.Tests
         private SelectElement _selectElement;
         public BaseTest(bool backGround)
         {
-            // _url = "http://www.sonic.somee.com/";
-            _url = "http://localhost/index.html";
+             _url = "http://www.sonic.somee.com/";
+           // _url = "http://localhost/index.html";
 
             ChromeOptions option = new ChromeOptions();
             if (backGround)
@@ -51,8 +52,10 @@ namespace Loja.Mvc.Tests
         {
             try
             {
-                this.ProcurarElemento(id);
-                return false;
+                if (this.ProcurarMuitosElemento(id).Count != 0)
+                    return false;
+                else
+                    return true;
             }
             catch (NoSuchElementException)
             {
@@ -96,11 +99,11 @@ namespace Loja.Mvc.Tests
             actions = actions.Click();
             actions.Build().Perform();
 
-            this.AguardarSegundos(3);
+            this.AguardarSegundos(1);
 
             SendKeys.SendWait(arquivo);
 
-            this.AguardarSegundos(3);
+         //   this.AguardarSegundos(5);
 
             SendKeys.SendWait("{ENTER}");
         }

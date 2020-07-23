@@ -18,6 +18,12 @@ namespace Loja.Mvc.Tests
 
             this.AguardarSegundos(4);
 
+            var existeElemento = true;
+            while (existeElemento)
+            {
+                existeElemento = this.ExisteElemento(By.LinkText("Produto"));
+            }
+
             this.ProcurarElemento(By.LinkText("Produto")).Click();
 
             this.AguardarSegundos(2);
